@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Animaciones cajas Texto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+</head>
+
+<body>
+    <dialog class="animate__animated animate__zoomInDown" id="modal">
+        <div class="modal-div">
+            <h1 class="tittle-modal">Cuando quieras jugar aprieta el botón</h1>
+            <h2>¿PREPARADO PARA UNA NUEVA PARTIDA?</h2>
+            <button onclick="iniciarPartida()" class="btn-dlog btn-modal">JUGAR</button>
+        </div>
+    </dialog>
+    <div class="col nube"><img src="img/nubes.png" alt="">
+        <span class="nube-span">
+            <p class="texto-nube"></p>
+            <p class="texto-nube1"></p>
+        </span>
+    </div>
+    <div id="audio"></div>
+    <div class="container-fluid mt-5 animate__animated animate__slideInUp">
+
+        <div class="fila1 row justify-content-center">
+            <div class="col-12 nes-container with-title is-centered">
+                <h1 class="title title1">Introducción de Palabra y Letras</h1>
+
+                <div class="nes-field d-flex flex-wrap justify-content-around col-6 m-auto mb-2">
+                    <label for="nombre_field"><input type="text" id="nombre_field" class="nes-input" placeholder="Introduce Nombre"></label>
+                    <label for="intentos_field"><input type="number" id="intentos_field" class="nes-input" placeholder="¿Nº Intentos?"></label>
+                </div>
+
+                <div class="nes-field d-flex flex-wrap justify-content-around col-6 m-auto">
+                    <label for="palabra_field"><input type="text" id="palabra_field" class="nes-input" placeholder="Introduce palabra"></label>
+                    <button onclick="recogeDatos()" type="button" class="inicio nes-btn is-success boton0 m-auto mb-2">Enviar Datos</button>
+                </div>
+
+
+                <div class="nes-field d-flex flex-wrap justify-content-around col-6 m-auto">
+                    <label for="letra_field"><input type="text" id="letra_field" class="nes-input" placeholder="Introduce letra"></label>
+                    <button onclick="compruebaLetra()" type="button" class="nes-btn is-primary boton1 is-disabled m-auto">Comprobar Letra</button>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 m-auto mt-5 nes-container with-title is-centered fila3">
+                        <h1 class="title title1">Letras Acertadas y Falladas</h1>
+                        <div class="col-12 nes-table-responsive">
+                            <table class="m-auto nes-table is-bordered is-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Letras acertadas</th>
+                                        <th>Letras falladas</th>
+                                        <th>Intentos Restantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="letras-acertadas"></td>
+                                        <td class="letras-falladas"></td>
+                                        <td class="intentos">nº intentos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="fila2 row justify-content-center m-auto">
+                    <div class="resultados col-12 mt-5 nes-container with-title is-centered">
+                        <h1 class="title title1">¿Como va la Palabra?</h1>
+                        <div class="salida"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
